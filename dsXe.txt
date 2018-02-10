@@ -1,0 +1,102 @@
+20
+1
+50K3-1123
+Nguyen Van A
+Honda RSX 2008
+0
+2
+37J3-2893
+Tran Van B
+Toyota
+7
+3
+37KE-2189
+Nguyen Van C
+Hyundai
+1500
+2
+84LA-2890
+Phung Phe Phon
+Cambri
+4
+3
+79KE-2089
+Nguyen Van Phe
+Hyundai2
+750
+3
+99KE-9999
+Nguyen Van D
+Hyundai4
+1900
+2
+14LA-0000
+Duong Van F
+Cambri
+16
+2
+44LA-0034
+Tran Trui
+Cambrige3
+7
+3
+94LA-0234
+Tran Trui Te
+Honda
+1500
+1
+54LA-3034
+Le Thai Hoc
+Winner
+0
+1
+88LA-8989
+Le Bui Doi
+Cup50
+0
+3
+34LA-8763
+Tran Phan Chu
+CaNon201
+1500
+2
+90TP-7623
+Thang Pha Hoai
+Lamborini
+4
+2
+49B4-7034
+Tran Quoc An
+Lamborini
+8
+3
+04L2-0134
+Le An Chuoi
+Cambrige
+750
+1
+42B1-5782
+Tran Minh Tai
+Cay Dua
+0
+3
+04R2-1332
+Tran Qua Chuoi
+Cay Mit
+1500
+1
+24AA-3232
+Tran Cu Chuoi
+Cay Oi
+0
+3
+11PP-8732
+Tan Me Trai
+Hot Mit
+1900
+1
+04TA-0834
+Tran Trui Rron
+Qua Oi
+0
+
