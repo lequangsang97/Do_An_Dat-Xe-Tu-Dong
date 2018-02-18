@@ -132,7 +132,7 @@ public class ChucNang4 implements Comparable<ChucNang4> { // implements comparbl
 					tdDenX = sc.nextInt();
 					tdDenY = sc.nextInt();
 					sc.nextLine(); // clear butter.
-					if (tdDiX >= 0 && tdDiX <= 20)
+					if (tdDiX >= 0 && tdDiX <= 20) // le quang sang
 						break;
 				}
 				break; // loop of try catch;
