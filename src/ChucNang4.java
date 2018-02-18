@@ -106,7 +106,7 @@ public class ChucNang4 implements Comparable<ChucNang4> { // implements comparbl
 						while (true) {
 							System.out.print("Nhap Cho Ngoi: ");
 							soChoNgoi = sc.nextInt();
-							if (soChoNgoi >= 4 || soChoNgoi <= 16)
+							if (soChoNgoi >= 4 && soChoNgoi <= 16)
 								break;
 						}
 
