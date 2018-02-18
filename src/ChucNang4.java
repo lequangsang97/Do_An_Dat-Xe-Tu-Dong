@@ -84,7 +84,7 @@ class ChucNang2 {
 }
 
 // Chức năng cho khác hàng nhập vào chọn xe và tự động đặt xe cho khác hàng thỏa yêu cầu đề bài.
-public class ChucNang4 implements Comparable<ChucNang4> {
+public class ChucNang4 implements Comparable<ChucNang4> { // implements comparble để gọi hàm sort in java
 
 	public static void goiXe() throws IOException {
 		int loaiXe;
@@ -95,26 +95,47 @@ public class ChucNang4 implements Comparable<ChucNang4> {
 			Scanner sc = new Scanner(System.in);
 			try { // Bắt lỗi định dạng
 				System.out.println("Moi Quy Khach Chon Xe");
-				System.out.print("Loai Xe: ");
-				loaiXe = sc.nextInt();
+				while (true) {
+					System.out.print("Loai Xe: ");
+					loaiXe = sc.nextInt();
+					if (loaiXe >= 1 && loaiXe <= 3)
+						break;
+				}
 				if (loaiXe != 1) { // choose car.
 					if (loaiXe == 2) {
-						System.out.print("Nhap Cho Ngoi: ");
-						soChoNgoi = sc.nextInt();
+						while (true) {
+							System.out.print("Nhap Cho Ngoi: ");
+							soChoNgoi = sc.nextInt();
+							if (soChoNgoi >= 4 || soChoNgoi <= 16)
+								break;
+						}
+
 					} else if (loaiXe == 3) {
-						System.out.print("Nhap Trong Luong Xe: ");
-						soChoNgoi = sc.nextInt();
+						while (true) {
+							System.out.print("Nhap Cho Ngoi: ");
+							soChoNgoi = sc.nextInt();
+							if (soChoNgoi >= 750 || soChoNgoi <= 1900)
+								break;
+						}
 					}
 				}
 				//Step 2.... Nhap vao cac toa do di va den.
-				System.out.println("Nhap Toa Do Di (x, y)");
-				tdDiX = sc.nextInt();
-				tdDiY = sc.nextInt();
-				System.out.println("Nhap Diem Den (x, y)");
-				tdDenX = sc.nextInt();
-				tdDenY = sc.nextInt();
-				sc.nextLine(); // clear butter.
-				break; // is correct break;
+				while (true) {
+					System.out.println("Nhap Toa Do Di (x, y)");
+					tdDiX = sc.nextInt();
+					tdDiY = sc.nextInt();
+					if (tdDiX >= 0 && tdDiX <= 20)
+						break;
+				}
+				while (true) {
+					System.out.println("Nhap Diem Den (x, y)");
+					tdDenX = sc.nextInt();
+					tdDenY = sc.nextInt();
+					sc.nextLine(); // clear butter.
+					if (tdDiX >= 0 && tdDiX <= 20)
+						break;
+				}
+				break; // loop of try catch;
 
 			} catch (Exception e) { // Bắt lỗi ngoại lệ nếu nhập sai định dạng.
 				System.out.println("ERR: Xin Vui Long Nhap Lai!!!");
@@ -154,7 +175,7 @@ public class ChucNang4 implements Comparable<ChucNang4> {
 						giaTienKhachTra = 10000 + (index.getKhoangCach() - 2) * 3500;
 					}
 
-					// Set tọa độ đến cho Xe.
+					// Set tọa độ đến cho Xe. để reset lại tọa độ cho xe sau 5 lượt gọi
 
 					index.setToaDoXDen(tdDenX);
 					index.setToaDoYDen(tdDenY);
@@ -168,7 +189,7 @@ public class ChucNang4 implements Comparable<ChucNang4> {
 					System.out.println("SoChoNgoi (Trong Luong): " + index.getSoChoNgoi());
 					System.out.format("Gia Tien: %,8.3f (Dong)\n", giaTienKhachTra);
 					System.out.format("Thoi Gian Don Khach Sau: %,4.3f (Phut)\n", thoiGianXeDen * 60);
-					
+
 					// add vao dsXeDuocGoi'
 					ChucNang1.dsXeDuocGoi.add(index);
 
@@ -224,7 +245,7 @@ public class ChucNang4 implements Comparable<ChucNang4> {
 					System.out.println("SoChoNgoi (Trong Luong): " + index.getSoChoNgoi());
 					System.out.format("Gia Tien: %,8.3f (Dong)\n", giaTienKhachTra);
 					System.out.format("Thoi Gian Don Khach Sau: %,4.3f (Phut)\n", thoiGianXeDen * 60);
-					
+
 					ChucNang1.dsXeDuocGoi.add(index); // add vô ds xe được gọi để sau này có thể dùng lại
 					break;
 				}
@@ -298,7 +319,7 @@ public class ChucNang4 implements Comparable<ChucNang4> {
 					System.out.println("SoChoNgoi (Trong Luong): " + index.getSoChoNgoi());
 					System.out.format("Gia Tien: %,8.3f (Dong)\n", giaTienKhachTra);
 					System.out.format("Thoi Gian Don Khach Sau: %,4.3f (Phut)\n", thoiGianXeDen * 60);
-					
+
 					ChucNang1.dsXeDuocGoi.add(index); // Add xe được gọi vào trong ds xe được gọi
 					break;
 				}
@@ -344,7 +365,6 @@ public class ChucNang4 implements Comparable<ChucNang4> {
 		}
 
 		// Tiến hành gọi xe.
-		
 
 		do {
 
@@ -370,11 +390,9 @@ public class ChucNang4 implements Comparable<ChucNang4> {
 			} while (true);
 			if (yesNo.toLowerCase().equals("no"))
 				break;
-			
-			if(soLanGoiXe==2)
-			{
-				for(Xe index : ChucNang1.dsXeDuocGoi)
-				{
+
+			if (soLanGoiXe == 2) {
+				for (Xe index : ChucNang1.dsXeDuocGoi) {
 					index.setToaDoX(index.getToaDoXDen());
 					index.setToaDoXDen(0);
 					index.setToaDoY(index.getToaDoYDen());
@@ -397,18 +415,19 @@ public class ChucNang4 implements Comparable<ChucNang4> {
 		// }
 		// for (Xe index : ChucNang1.xeMay) // PhÃ¡t sinh vá»‹ trÃ­ ngáº©u nhiÃªn cho xe oto trÃªn báº£n Ä‘á»“
 		// {
-			
+
 		// 	index.Output();
 		// }
 		// for (Xe index : ChucNang1.xeMay) // PhÃ¡t sinh vá»‹ trÃ­ ngáº©u nhiÃªn cho xeTai trÃªn báº£n Ä‘á»“.
 		// {
-			
+
 		// 	index.Output();
 		// }
 
 	}
 
 	//goiXe();
+
 	public int compare(Xe o1, Xe o2) {
 		if (o1.getKhoangCach() > o2.getKhoangCach())
 			return 1;
